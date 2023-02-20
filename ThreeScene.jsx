@@ -17,7 +17,7 @@ export default function ThreeScene() {
   const onContextCreate = async (gl) => {
     // Create Three.js renderer
     renderer.current = new Renderer({ gl });
-    renderer.current.setClearColor(0xffffff);
+    renderer.current.setClearColor("#000");
 
     // Create camera
     const camera = new PerspectiveCamera(
@@ -40,13 +40,8 @@ export default function ThreeScene() {
     // Animate the box
     const animate = () => {
       requestAnimationFrame(animate);
-      box.rotation.x += 0.01;
-      box.rotation.y += 0.01;
-      if (box.position.y > 2) {
-        box.position.y -= 0.01;
-      } else {
-        box.position.y += 0.01;
-      }
+      box.rotation.x += 0.001;
+      box.rotation.y += 0.001;
       renderer.current.render(scene, camera);
       gl.endFrameEXP();
     };

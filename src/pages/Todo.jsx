@@ -10,9 +10,9 @@ import {
   ScrollView,
   Platform,
 } from "react-native";
-import { Fontisto } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { theme } from "./colors";
+import { theme } from "../colors";
+import TodoItem from "../components/TodoItem";
 
 const STORAGE_KEY = "@toDos";
 
@@ -105,11 +105,12 @@ export default function Todo() {
       <ScrollView>
         {Object.keys(toDos).map((key) =>
           toDos[key].working === working ? (
-            <View key={key} style={styles.toDo}>
-              <Text style={styles.toDoText}>{toDos[key].text}</Text>
-              <TouchableOpacity onPress={() => deleteToDo(key)}>
-                <Fontisto name="trash" size={18} color="grey" />
-              </TouchableOpacity>
+            <View key={key}>
+              <TodoItem
+                toDo={toDos[key]}
+                number={key}
+                deleteToDo={deleteToDo}
+              />
             </View>
           ) : null
         )}
@@ -140,20 +141,5 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     marginVertical: 20,
     fontSize: 18,
-  },
-  toDo: {
-    backgroundColor: theme.grey,
-    marginBottom: 10,
-    paddingVertical: 20,
-    paddingHorizontal: 20,
-    borderRadius: 15,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  toDoText: {
-    color: "white",
-    fontSize: 16,
-    fontWeight: "600",
   },
 });

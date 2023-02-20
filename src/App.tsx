@@ -1,10 +1,9 @@
-import { StyleSheet, Text, View, ScrollView, Dimensions } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Weather from "./Weather";
-import HomeScreen from "./HomeScreen";
-import Todo from "./Todo";
-import ThreeScene from "./ThreeScene";
+import Weather from "./pages/Weather";
+import HomeScreen from "./pages/HomeScreen";
+import Todo from "./pages/Todo";
+import ThreeScene from "./pages/ThreeScene";
 
 const Tab = createBottomTabNavigator();
 

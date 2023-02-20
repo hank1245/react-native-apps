@@ -14,12 +14,15 @@
     "@react-navigation/native": "^6.1.4",
     "@react-navigation/native-stack": "^6.9.10",
     "expo": "~47.0.12",
+    "expo-gl": "^12.0.1",
     "expo-location": "^15.0.1",
     "expo-status-bar": "~1.4.2",
+    "expo-three": "^7.0.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-native": "0.70.5",
-    "react-native-web": "~0.18.9"
+    "react-native-web": "~0.18.9",
+    "three": "^0.149.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
